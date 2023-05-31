@@ -518,13 +518,13 @@ class MainActivity : AppCompatActivity() {
                     MotionEvent.ACTION_UP ->{
                         var nt:String = resultText.text.toString()
                         fun isNegative(c: Char) = c in nt
-                        if(nt.equals("")==true){
-                            resultText.setText("-0")
+                        if(nt == "0"){
+                            resultText.setText("0")
                         }
                         else if(clicked==true){
                             signed =  true
                             if(isNegative('-')==false) {
-                                resultText.setText("-0")                }
+                                resultText.setText("-"+nt)                }
                             else {
                                 resultText.setText(nt.replace("-",""))
                             }
